@@ -11,6 +11,18 @@ describe('<GuessForm />', () => {
     shallow(<GuessForm />);
   });
 
+  it('contains a form', () => {
+    const wrapper = shallow(<GuessForm />);
+    expect(wrapper.find('form').length).toEqual(1);
+  });
+  
+  // it('should execute callback on form submit', () => {
+  //   const callback = jest.fn();
+  //   const wrapper = mount(<GuessForm onGuess={callback}/>);
+  //   wrapper.find('form').simulate('submit');
+  //   expect(callback).toHaveBeenCalled();
+  // });
+
   it('should fire onMakeGuess callback when form is submitted', () => {
     const callback = jest.fn();
     const wrapper = mount(<GuessForm onMakeGuess={callback} />);
